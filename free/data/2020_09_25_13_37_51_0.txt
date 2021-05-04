@@ -1,0 +1,27 @@
+코딩시
+var 만쓰던가
+let과 const만 쓰기!
+
+
+호이스팅
+var : funtion scope
+function내부에 선언된게 아닐 경우 전역 변수로 hoisting됨
+
+let : block scope
+block-scoped이기 때문에 블럭를 벗어나면 메모리에서 해제됨
+
+
+php
+$_GET["name"]
+$_POST["name"]
+$_REQUEST["name"]
+
+phpstorm 포트.....
+
+get방식과 post방식
+post : 헤더에 데이터를 담아 전송하기대문에
+새로고침을할경우 데이터가 누락될수잇따. 
+
+phpstorm에서 테스트할때는 포트지우기
+
+CORS 오류 : 
