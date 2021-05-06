@@ -31,26 +31,24 @@ function check_input() {
         return;
     }
 
-    var emailRegExp = /^[0-9a-zA-Z]([-.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; 
-    // 검증에 사용할 정규식 변수 regExp에 저장 
-    if (document.member_form.email1.value.match(emailRegExp) != null) 
-    { alert('Good!'); } else { alert('Error'); }
+    /*********************************이메일 패턴체크 방식************************** */ 
+    let emailCheck = document.member_form.email1.value+"@"+document.memberform.email2.value;
 
-    
+    var emailRegExp = /^[0-9a-zA-Z]([-.]?[0-9a-zA-Z])@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z]).[a-zA-Z]{2,3}$/i; 
+
     if (!document.member_form.email1.value) {
         alert("이메일 주소를 입력하세요!");
         document.member_form.email1.focus();
         return;
-    }else if(document.member_form.email1.value.match(emailRegExp) != null){
-        alert("이메일 패턴이 맞지 않습니다.");
-        document.member_form.email1.value="";
-        document.member_form.email1.focus();
-        return;
-    }
-
-    if (!document.member_form.email2.value) {
+    }else if (!document.member_form.email2.value) {
         alert("이메일 주소를 입력하세요!");
         document.member_form.email2.focus();
+        return;
+    }else if (emailCheck.match(emailRegExp) == null) {
+        alert("이메일 패턴이 맞지 않습니다.");
+        document.member_form.email1.value="";
+        document.member_form.email2.value="";
+        document.member_form.email1.focus();
         return;
     }
 

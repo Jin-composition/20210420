@@ -5,9 +5,9 @@
     $id   = input_set($_POST["id"]);
     $pass = input_set($_POST["pass"]);
 
-    //**
+    //************************************
     //CALL STORE PROCEDURE : ID, PASS CHECK
-    //**
+    //************************************
     $sql = "call signin('$id','$pass',@resultCode)";
     $result = mysqli_query($con, $sql);
 

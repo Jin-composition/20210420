@@ -20,12 +20,7 @@
             include_once $_SERVER['DOCUMENT_ROOT'] . "/jhytest/20210420/db/create_table.php";
             create_table($con, 'message');
             if (!$userid) {
-                echo("<script>
-				alert('로그인 후 이용해주세요!');
-				history.go(-1);
-				</script>
-			");
-                exit;
+				alert_back('로그인 후 이용해주세요!');
             }
         ?>
 		<section>
@@ -42,7 +37,7 @@
 					<div id="write_msg">
 						<ul>
 							<li>
-								<span class="col1">보내는 사람 진하영 : </span>
+								<span class="col1">보내는 사람 : </span>
 								<span class="col2"><?= $userid ?></span>
 								<input type="hidden" value=<?=$userid?> name="send_id">
 							</li>
